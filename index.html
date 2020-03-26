@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="icon rectangle" data-shape="rectangle">
+                <i class="fa fa-square-o" aria-hidden="true"></i>
+            </div>
+            <div class="icon circle" data-shape="circle">
+                <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </div>
+            <div class="icon pencil" data-shape="pencil">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </div>
+            <div class="icon line" data-shape="line">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </div>
+            <div class="icon text" data-shape="text">
+                <i class="fa fa-font" aria-hidden="true"></i>
+            </div>
+            <div class="icon" id="redoButton" data-shape="redo">
+                <i class="fa fa-rotate-right" aria-hidden="true"></i>
+            </div>
+            <div class="icon" id="undoButton" data-shape="undo">
+                <i class="fa fa-undo" aria-hidden="true"></i>
+            </div>
+            <div class="icon save" id="saveButton" name="saveButton" data-shape="save">
+                <i class="fa fa-save" aria-hidden="true"></i>
+            </div>
+            <div class="icon load" id="loadButton" name="loadButton" data-shape="load">
+                <i class="fa fa-upload" aria-hidden="true"></i>
+            </div>
+            <div class="icon move" id="moveButton" name="moveButton" data-shape="move">
+                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+            </div>
+            <div class="icon saveAs" id="saveAsButton" name="saveAsButton">
+                <i class="fas fa-file-download" aria-hidden="true"></i>
+            </div>
+        </nav>
+        <div class="container">
+            <div id="lookOfShape">
+                <input type="radio" id="fill" name="fillOrStroke" value="fill" checked>
+                <label for="fill">Fill shape</label><br>
+                <input type="radio" id="stroke" name="fillOrStroke" value="stroke">
+                <label for="stroke">Stroke shape</label><br><br>
+                <label for="colorOfShape">Color:</label>
+                <input type="color" id="colorOfShape" value="#000000"><br> <!-- black is default -->
+                <label for="lineWidth">Line width:</label>
+                <select id="lineWidth">
+                    <option value="1">thin</option>
+                    <option value="6">medium</option>
+                    <option value="12">thick</option>
+                </select><br><br>
+                <label for="fontSelection">Fonts:</label>
+                <input type="text" id="textSelected" placeholder="Text to add" /><br>
+                <label for="fontSelection">Text font:</label>
+                <select id="fontSelection">
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Times">Times</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Bookman">Bookman</option>
+                </select><br>
+                <label for="textSize">Text size:</label>
+                <select id="textSize">
+                    <option value="13">13</option>
+                    <option value="16">16</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select><br><br>
+                <a id="download" value="Download">Download drawing</a>
+            </div>
+            <canvas id="my-canvas" width="800" height="500">
+                Not supported
+            </canvas>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
+        <script src="shapes.js" charset="utf-8"></script>
+        <script src="drawio.js" charset="utf-8"></script>
+        <script src='undoRedo.js' charset="utf-8"></script>
+        <script src='saveLoad.js' charset="utf-8"></script>
+    </body>
+</html>
